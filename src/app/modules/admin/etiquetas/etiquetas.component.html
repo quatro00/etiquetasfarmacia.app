@@ -1,0 +1,75 @@
+<div class="flex w-full flex-auto flex-col">
+
+    <div
+        class="relative flex flex-0 flex-col border-b px-6 py-8 sm:flex-row sm:items-center sm:justify-between md:px-8">
+        <!-- Loader -->
+        @if (isLoading) {
+        <div class="absolute inset-x-0 bottom-0">
+            <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
+        </div>
+        }
+        <!-- Title -->
+        <div>
+            <h2 class="text-3xl font-semibold leading-8 tracking-tight">
+                Actualización de plantillas
+            </h2>
+            <div class="text-secondary font-medium tracking-tight">
+                Actualiza las plantillas del sistema
+            </div>
+        </div>
+
+        <!-- Tabla de Organizaciones -->
+    </div>
+
+    <div class="p-4">
+        <div class="mx-auto flex w-full max-w-screen-xl flex-wrap p-3 ">
+            <div class="mt-8 grid w-full grid-cols-1 gap-8 xl:grid-cols-1" style="margin-top: 0px !important;">
+                <!-- Recent transactions table -->
+                <div class="bg-card flex flex-auto flex-col overflow-hidden rounded-2xl shadow xl:col-span-2">
+                    <div class="mx-6">
+                        <br/>
+                        <h2 class="text-3xl font-semibold leading-8 tracking-tight">
+                            Reporte de conceptos
+                        </h2>
+                        <div class="space-y-6" [formGroup]="form">
+                            <br />
+                            <!-- Organizacion -->
+                            <mat-form-field appearance="fill" class="w-full">
+                                <mat-label>Quincena</mat-label>
+                                <input matInput formControlName="quincena" />
+                            </mat-form-field>
+                            <!-- Prioridad -->
+                            <mat-form-field appearance="fill" class="w-full">
+                                <mat-label>Organización</mat-label>
+                                <mat-select formControlName="organizacion">
+                                    <mat-option [value]="''">Seleccione...</mat-option>
+                                    <mat-option *ngFor="let cat of organizaciones" [value]="cat.id">{{ cat.nombre }}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <!-- Adjuntar fotos -->
+                            <label class="block mb-2 font-medium">Adjuntar reporte:</label>
+                            <input type="file" accept=".xls,.xlsx" (change)="onFileSelected($event)"
+                                capture="environment" class="block" />
+
+                            <!-- Enviar -->
+                            <div class="flex justify-end space-x-2 mt-4">
+                                <button mat-raised-button class="fuse-mat-button" [color]="'primary'"
+                                    [disabled]="(form.invalid && !form.disabled) || archivo == null" (click)="guardarReporte()">
+                                    @if (!form.disabled) {
+                                    <span> Enviar ticket </span>
+                                    }
+                                    @if (form.disabled) {
+                                    <mat-progress-spinner [diameter]="24"
+                                        [mode]="'indeterminate'"></mat-progress-spinner>
+                                    }
+                                </button>
+
+                            </div>
+                            <br /><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

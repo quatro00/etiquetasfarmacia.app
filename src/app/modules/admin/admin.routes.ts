@@ -8,6 +8,7 @@ import { CatalogoOrganizacionesComponent } from './catalogo-organizaciones/catal
 import { NotificacionesComponent } from 'app/modules/admin/notificaciones/notificaciones.component';
 import { ReporteTrabajadorComponent } from 'app/modules/admin/reporte-trabajador/reporte-trabajador.component';
 import { ReporteQuincenaComponent } from 'app/modules/admin/reporte-quincena/reporte-quincena.component';
+import { EtiquetasComponent } from './etiquetas/etiquetas.component';
 
 export default [
     {
@@ -21,6 +22,7 @@ export default [
             { path: 'notificaciones', component: NotificacionesComponent },
             { path: 'reporte-trabajador', component: ReporteTrabajadorComponent },
             { path: 'reporte-quincena', component: ReporteQuincenaComponent },
+            { path: 'etiquetas', component: EtiquetasComponent },
         ]
     },
 ] as Routes;
