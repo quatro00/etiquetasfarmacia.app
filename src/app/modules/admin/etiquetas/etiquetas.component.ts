@@ -64,6 +64,31 @@ export class EtiquetasComponent implements OnInit {
   archivos = [] as File[];
   archivo;
   organizaciones = [];
+  trabajadores = [
+    {matricula:'	11568003	', nombre:'	GARZA/LOPEZ/HECTOR ALEJANDRO	',},
+{matricula:'	11570873	', nombre:'	ZARAGOZA/ORTIZ/NOE ISRAEL	',},
+{matricula:'	11576049	', nombre:'	ALONSO/MONRROY/MARIA DEL CARMEN	',},
+{matricula:'	96203261	', nombre:'	CEPEDA/FLORES/MAYELA GUADALUPE	',},
+{matricula:'	97200847	', nombre:'	ROSALES/GALLARDO/NORA SARAI	',},
+{matricula:'	97202217	', nombre:'	HERRERA/MORENO/JORGE ALEJANDRO	',},
+{matricula:'	97207434	', nombre:'	REYNA/GUZMAN/IRASEMA BERENICE	',},
+{matricula:'	97209789	', nombre:'	BANDA/DIAZ/CARLOS ALEJANDRO	',},
+{matricula:'	98200297	', nombre:'	MARTINEZ/REYNA/GEMA BERENICE	',},
+{matricula:'	98203601	', nombre:'	CONTRERAS/RUIZ/ROCIO	',},
+{matricula:'	98204094	', nombre:'	LARA/RODRIGUEZ/RENE IVAN	',},
+{matricula:'	98204098	', nombre:'	CAMACHO/LAUREANO/LUIS ALBERTO	',},
+{matricula:'	98204929	', nombre:'	GONZALEZ/MORENO/EDITH SANJUANA	',},
+{matricula:'	98207303	', nombre:'	CABALLERO/SANCHEZ/GABRIELA	',},
+{matricula:'	98209935	', nombre:'	ASIS/MARTINEZ/ABEL	',},
+{matricula:'	98295252	', nombre:'	NUÑEZ/CERVANTES/YURIDIA	',},
+{matricula:'	99058230	', nombre:'	LOPEZ/DIAZ/MARICELA	',},
+{matricula:'	99202854	', nombre:'	GARCIA/DIAZ/BLANCA NELLY	',},
+{matricula:'	99203345	', nombre:'	DE LA CRUZ/ESTRADA/ALAN	',},
+{matricula:'	99204812	', nombre:'	RODRIGUEZ/GAYTAN/MARIA MIRIAM	',},
+{matricula:'	99206212	', nombre:'	CRUZ/SANCHEZ/PEDRO	',},
+{matricula:'	99208152	', nombre:'	GONZALEZ/MENDOZA/SONIA ARIANA	',},
+
+  ]
   form: FormGroup;
   zpl = '';
   plantilla = `
@@ -213,10 +238,11 @@ export class EtiquetasComponent implements OnInit {
       let encargado = this.form.value.encargado;
       let lote = this.form.value.lote;
       //let caducidad = this.form.value.caducidad;
-      let vigenciaDias = this.form.value.vigencia;
+      let vigenciaDias = Number(this.form.value.vigencia);
       let viaDeAdministracion = this.form.value.viaDeAdministracion;
       let fabricante = this.form.value.fabricante;
       let nrs = this.form.value.nrs;
+
 
       const caducidadDate: Date = this.form.value.caducidad;
       let caducidad = this.formatDate(caducidadDate);
@@ -228,12 +254,14 @@ export class EtiquetasComponent implements OnInit {
       fechaVigenciaDate.setDate(fechaVigenciaDate.getDate() + vigenciaDias);
       const fechaDeVigencia = this.formatDate(fechaVigenciaDate);
 
-
-
+      
+      //console.log('fdias de vigencia:',vigenciaDias);
+      console.log('fecha de empaquetado:',fechaEmpaquetado);
+      console.log('fecha de vigencia:',fechaDeVigencia);
       const dialogRef = this.dialog.open(CantidadEtiquetasComponent, {
         width: '500px',
       });
-
+      //return;
       dialogRef.afterClosed().subscribe(result => {
         if (result) {
           console.log(result.cantidad);
