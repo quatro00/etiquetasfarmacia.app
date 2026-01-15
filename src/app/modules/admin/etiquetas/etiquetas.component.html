@@ -11,11 +11,8 @@
         <!-- Title -->
         <div>
             <h2 class="text-3xl font-semibold leading-8 tracking-tight">
-                Actualización de plantillas
+                Impresión de etiquetas
             </h2>
-            <div class="text-secondary font-medium tracking-tight">
-                Actualiza las plantillas del sistema
-            </div>
         </div>
 
         <!-- Tabla de Organizaciones -->
@@ -29,39 +26,101 @@
                     <div class="mx-6">
                         <br/>
                         <h2 class="text-3xl font-semibold leading-8 tracking-tight">
-                            Reporte de conceptos
+                            Impresión de etiquetas
                         </h2>
                         <div class="space-y-6" [formGroup]="form">
                             <br />
                             <!-- Organizacion -->
-                            <mat-form-field appearance="fill" class="w-full">
-                                <mat-label>Quincena</mat-label>
-                                <input matInput formControlName="quincena" />
-                            </mat-form-field>
+                             <div class="flex gap-4">
+                                <mat-form-field appearance="fill" class="w-1/3">
+                                    <mat-label>Clave</mat-label>
+                                    <input matInput formControlName="clave" />
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill" class="w-2/3">
+                                    <mat-label>Descripción</mat-label>
+                                    <input matInput formControlName="descripcion" />
+                                </mat-form-field>
+                            </div>
+                            <div class="flex gap-4">
+                                <mat-form-field appearance="fill" class="w-1/3">
+                                    <mat-label>Lote</mat-label>
+                                    <input matInput formControlName="lote" />
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill" class="w-1/3">
+                                    <mat-label>Caducidad</mat-label>
+                                    <input
+                                    
+    matInput
+    [matDatepicker]="picker"
+    formControlName="caducidad"
+  >
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill" class="w-1/3">
+                                    <mat-label>Vigencia</mat-label>
+                                    <input matInput formControlName="vigencia" />
+                                </mat-form-field>
+                            </div>
+                            <div class="flex gap-4">
+                                <mat-form-field appearance="fill" class="w-1/3">
+                                    <mat-label>Via de adminsitración</mat-label>
+                                <mat-select formControlName="viaDeAdministracion">
+                                    <mat-option [value]="''">Seleccione...</mat-option>
+                                    <mat-option value="Oral">Oral</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill" class="w-1/3">
+                                    <mat-label>Fabricante</mat-label>
+                                    <input matInput formControlName="fabricante" />
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill" class="w-1/3">
+                                    <mat-label>NRS</mat-label>
+                                    <input matInput formControlName="nrs" />
+                                </mat-form-field>
+                            </div>
+                            
+                           
                             <!-- Prioridad -->
                             <mat-form-field appearance="fill" class="w-full">
-                                <mat-label>Organización</mat-label>
-                                <mat-select formControlName="organizacion">
+                                <mat-label>Encargado</mat-label>
+                                <mat-select formControlName="encargado">
                                     <mat-option [value]="''">Seleccione...</mat-option>
-                                    <mat-option *ngFor="let cat of organizaciones" [value]="cat.id">{{ cat.nombre }}</mat-option>
+                                    <mat-option value="11568003-GARZA/LOPEZ/HECTOR ALEJANDRO">11568003-GARZA/LOPEZ/HECTOR ALEJANDRO</mat-option>
+<mat-option value="11570873-ZARAGOZA/ORTIZ/NOE ISRAEL">11570873-ZARAGOZA/ORTIZ/NOE ISRAEL</mat-option>
+<mat-option value="11576049-ALONSO/MONRROY/MARIA DEL CARMEN">11576049-ALONSO/MONRROY/MARIA DEL CARMEN</mat-option>
+<mat-option value="96203261-CEPEDA/FLORES/MAYELA GUADALUPE">96203261-CEPEDA/FLORES/MAYELA GUADALUPE</mat-option>
+<mat-option value="97200847-ROSALES/GALLARDO/NORA SARAI">97200847-ROSALES/GALLARDO/NORA SARAI</mat-option>
+<mat-option value="97202217-HERRERA/MORENO/JORGE ALEJANDRO">97202217-HERRERA/MORENO/JORGE ALEJANDRO</mat-option>
+<mat-option value="97207434-REYNA/GUZMAN/IRASEMA BERENICE">97207434-REYNA/GUZMAN/IRASEMA BERENICE</mat-option>
+<mat-option value="97209789-BANDA/DIAZ/CARLOS ALEJANDRO">97209789-BANDA/DIAZ/CARLOS ALEJANDRO</mat-option>
+<mat-option value="98200297-MARTINEZ/REYNA/GEMA BERENICE">98200297-MARTINEZ/REYNA/GEMA BERENICE</mat-option>
+<mat-option value="98203601-CONTRERAS/RUIZ/ROCIO">98203601-CONTRERAS/RUIZ/ROCIO</mat-option>
+<mat-option value="98204094-LARA/RODRIGUEZ/RENE IVAN">98204094-LARA/RODRIGUEZ/RENE IVAN</mat-option>
+<mat-option value="98204098-CAMACHO/LAUREANO/LUIS ALBERTO">98204098-CAMACHO/LAUREANO/LUIS ALBERTO</mat-option>
+<mat-option value="98204929-GONZALEZ/MORENO/EDITH SANJUANA">98204929-GONZALEZ/MORENO/EDITH SANJUANA</mat-option>
+<mat-option value="98207303-CABALLERO/SANCHEZ/GABRIELA">98207303-CABALLERO/SANCHEZ/GABRIELA</mat-option>
+<mat-option value="98209935-ASIS/MARTINEZ/ABEL">98209935-ASIS/MARTINEZ/ABEL</mat-option>
+<mat-option value="98295252-NUÑEZ/CERVANTES/YURIDIA">98295252-NUÑEZ/CERVANTES/YURIDIA</mat-option>
+<mat-option value="99058230-LOPEZ/DIAZ/MARICELA">99058230-LOPEZ/DIAZ/MARICELA</mat-option>
+<mat-option value="99202854-GARCIA/DIAZ/BLANCA NELLY">99202854-GARCIA/DIAZ/BLANCA NELLY</mat-option>
+<mat-option value="99203345-DE LA CRUZ/ESTRADA/ALAN">99203345-DE LA CRUZ/ESTRADA/ALAN</mat-option>
+<mat-option value="99204812-RODRIGUEZ/GAYTAN/MARIA MIRIAM">99204812-RODRIGUEZ/GAYTAN/MARIA MIRIAM</mat-option>
+<mat-option value="99206212-CRUZ/SANCHEZ/PEDRO">99206212-CRUZ/SANCHEZ/PEDRO</mat-option>
+<mat-option value="99208152-GONZALEZ/MENDOZA/SONIA ARIANA">99208152-GONZALEZ/MENDOZA/SONIA ARIANA</mat-option>
+
                                 </mat-select>
                             </mat-form-field>
-                            <!-- Adjuntar fotos -->
-                            <label class="block mb-2 font-medium">Adjuntar reporte:</label>
-                            <input type="file" accept=".xls,.xlsx" (change)="onFileSelected($event)"
-                                capture="environment" class="block" />
-
                             <!-- Enviar -->
                             <div class="flex justify-end space-x-2 mt-4">
                                 <button mat-raised-button class="fuse-mat-button" [color]="'primary'"
-                                    [disabled]="(form.invalid && !form.disabled) || archivo == null" (click)="guardarReporte()">
-                                    @if (!form.disabled) {
-                                    <span> Enviar ticket </span>
-                                    }
-                                    @if (form.disabled) {
-                                    <mat-progress-spinner [diameter]="24"
-                                        [mode]="'indeterminate'"></mat-progress-spinner>
-                                    }
+                                    (click)="nuevaOrganizacion()">
+                                    <span> Imprimir </span>
                                 </button>
 
                             </div>

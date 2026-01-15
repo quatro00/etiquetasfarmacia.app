@@ -15,62 +15,7 @@ export const defaultNavigation_admin: FuseNavigationItem[] = [
         type : 'basic',
         icon : 'heroicons_outline:envelope',
         link : '/admin/etiquetas'
-    },
-    {
-        id   : 'notificaciones',
-        title: 'Notificaciones',
-        type : 'basic',
-        icon : 'heroicons_outline:envelope',
-        link : '/admin/notificaciones'
-    },
-    {
-        id      : 'administracion',
-        title   : 'Administración',
-        type    : 'collapsable',
-        icon    : 'heroicons_outline:cog-6-tooth',
-        children: [
-            {
-                id   : 'actualizacion-plantillas',
-                title: 'Actualización de plantillas',
-                type : 'basic',
-                link : '/admin/actualizacion-plantillas'
-            }
-        ]
-    },
-    {
-        id      : 'catalogos',
-        title   : 'Catálogos',
-        type    : 'collapsable',
-        icon    : 'heroicons_outline:rectangle-stack',
-        children: [
-            {
-                id   : 'organizaciones',
-                title: 'Organizaciones',
-                type : 'basic',
-                link : '/admin/catalogo-organizaciones'
-            },
-            {
-                id   : 'conceptos',
-                title: 'Conceptos',
-                type : 'basic',
-                link : '/admin/catalogo-conceptos'
-            }
-        ]
-    },
-    {
-        id      : 'reportes',
-        title   : 'Reportes',
-        type    : 'collapsable',
-        icon    : 'heroicons_outline:document-chart-bar',
-        children: [
-            {
-                id   : 'reporte-quincena',
-                title: 'Reporte de quincena',
-                type : 'basic',
-                link : '/admin/reporte-quincena'
-            }
-        ]
-    },
+    }
 ];
 export const compactNavigation_admin: FuseNavigationItem[] = [
     {
