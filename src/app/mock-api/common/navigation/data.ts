@@ -10,6 +10,13 @@ export const defaultNavigation_admin: FuseNavigationItem[] = [
         link : '/admin/home'
     },
     {
+        id   : 'etiquetas',
+        title: 'Etiquetas',
+        type : 'basic',
+        icon : 'heroicons_outline:envelope',
+        link : '/admin/etiquetas'
+    },
+    {
         id   : 'notificaciones',
         title: 'Notificaciones',
         type : 'basic',
